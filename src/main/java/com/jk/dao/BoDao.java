@@ -20,7 +20,7 @@ public interface BoDao {
     void deleteAll(Integer ids);
 
 
-    @Insert("insert into t_blog(title,summary,releaseDate,clickHit,replyHit,content,keyWord,user_id,type_id) values(#{title},#{summary},#{releaseDate},#{clickHit},#{replyHit},#{content},#{keyWord},#{user_id},#{type_id})")
+    @Insert("insert into t_blog(title,summary,releaseDate,clickHit,replyHit,content,keyWord,user_id,type_id) values(#{title},#{summary},#{releaseDate},0,#{replyHit},#{content},#{keyWord},#{user_id},#{type_id})")
     void addBlog(Blog b);
 
     @Select("select * from t_blogtype")
@@ -29,6 +29,6 @@ public interface BoDao {
     @Select("select * from t_blog where id=#{id}")
     Blog queryBlogById(Integer id);
 
-    @Update("update t_blog set title=#{title},summary=#{summary},releaseDate=#{releaseDate},clickHit=#{clickHit},replyHit=#{replyHit},content=#{content},keyWord=#{keyWord},user_id=#{user_id},type_id=#{type_id} where id=#{id} ")
+    @Update("update t_blog set title=#{title},summary=#{summary},releaseDate=#{releaseDate},replyHit=#{replyHit},content=#{content},keyWord=#{keyWord},user_id=#{user_id},type_id=#{type_id} where id=#{id} ")
     void updateBlog(Blog b);
 }

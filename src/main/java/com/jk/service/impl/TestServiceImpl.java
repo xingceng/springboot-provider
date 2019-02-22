@@ -7,6 +7,8 @@ import com.jk.model.Blogger;
 import com.jk.model.Tree;
 import com.jk.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +17,8 @@ import java.util.List;
 public class TestServiceImpl implements TestService {
     @Autowired
     private TestDao testDao;
+    @Autowired
+    private RedisTemplate redisTemplate;
     @Override
     public String say(String something) {
         return "小明说的"+something;

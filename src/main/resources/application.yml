@@ -1,7 +1,7 @@
 server:
   servlet:
    context-path: /1807
-  port: 8081
+  port: 8086
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -17,3 +17,6 @@ spring:
     view:
       suffix: ".jsp"
       prefix: "/WEB-INF/"
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/1807a

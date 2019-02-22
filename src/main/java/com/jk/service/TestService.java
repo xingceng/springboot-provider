@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public interface TestService {
+
     String say(String something);
 
     String login(Blogger blogger);
@@ -19,7 +20,6 @@ public interface TestService {
     HashMap<String, Object> queryusers(Integer page, Integer rows);
 
     Blogger upuser(Integer id);
-
 
     void updateuser(Blogger blogger);
 
