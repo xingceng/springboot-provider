@@ -2,6 +2,7 @@ package com.jk.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.jk.dao.TestDao;
+import com.jk.model.Blog;
 import com.jk.model.BlogType;
 import com.jk.model.Blogger;
 import com.jk.model.Tree;
@@ -44,8 +45,8 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public List<BlogType> queryBolgclickHit() {
-        return testDao.queryBolgclickHit();
+    public List<BlogType> queryBolgType() {
+        return testDao.queryBolgType();
     }
 
 
@@ -69,6 +70,11 @@ public class TestServiceImpl implements TestService {
     @Override
     public void updateuser(Blogger blogger) {
         testDao.updateuser(blogger);
+    }
+
+    @Override
+    public List<Blog> queryBolgclickHit() {
+        return testDao.queryBolgclickHit();
     }
 
 }
