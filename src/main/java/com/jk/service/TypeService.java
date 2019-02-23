@@ -11,4 +11,6 @@ public interface TypeService {
     void saveType(BlogType type);
 
     void delType(String ids);
+
+    void editType(BlogType type);
 }

@@ -35,4 +35,9 @@ public class TypeServiceImpl implements TypeService {
     public void delType(String ids) {
         typeDao.delType(ids);
     }
+
+    @Override
+    public void editType(BlogType type) {
+        typeDao.editType(type);
+    }
 }

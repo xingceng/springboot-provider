@@ -1,10 +1,7 @@
 package com.jk.dao;
 
 import com.jk.model.BlogType;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -19,7 +16,9 @@ public interface TypeDao {
     @Insert("insert into t_blogtype(id,typeName,orderNum) values(#{id},#{typeName},#{orderNum})")
     void saveType(BlogType type);
 
-
     @Delete("delete from t_blogtype where id in (#{ids})")
     void delType(String ids);
+
+    @Update("update t_blogtype set typeName = #{typeName},orderNum = #{orderNum} where id = #{id}")
+    void editType(BlogType type);
 }
