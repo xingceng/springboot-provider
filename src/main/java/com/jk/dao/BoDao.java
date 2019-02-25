@@ -20,7 +20,7 @@ public interface BoDao {
     void deleteAll(Integer ids);
 
 
-    @Insert("insert into t_blog(title,summary,releaseDate,clickHit,replyHit,content,keyWord,user_id,type_id) values(#{title},#{summary},#{releaseDate},0,#{replyHit},#{content},#{keyWord},#{user_id},#{type_id})")
+    @Insert("insert into t_blog(title,summary,releaseDate,clickHit,replyHit,content,keyWord,user_id,type_id) values(#{title},#{summary},#{releaseDate},0,0,#{content},#{keyWord},#{user_id},#{type_id})")
     void addBlog(Blog b);
 
     @Select("select * from t_blogtype")
