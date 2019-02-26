@@ -66,7 +66,6 @@ public class TestServiceImpl implements TestService {
         return testDao.upuser(id);
     }
 
-
     @Override
     public void updateuser(Blogger blogger) {
         testDao.updateuser(blogger);
@@ -76,5 +75,6 @@ public class TestServiceImpl implements TestService {
     public List<Blog> queryBolgclickHit() {
         return testDao.queryBolgclickHit();
     }
+
 
 }
