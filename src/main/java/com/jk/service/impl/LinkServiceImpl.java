@@ -18,12 +18,12 @@ public class LinkServiceImpl implements LinkService {
 
     @Override
     public HashMap<String, Object> queryLink(Integer page, Integer rows) {
-        HashMap<String,Object> hashMap = new HashMap<>();
+        HashMap<String, Object> hashMap = new HashMap<>();
         long total = linkDao.queryTypeTotal();
-        int start = (page-1) * rows;
-        List<Link> list = linkDao.queryTypePage(start,rows);
-        hashMap.put("total",total);
-        hashMap.put("rows",list);
+        int start = (page - 1) * rows;
+        List<Link> list = linkDao.queryTypePage(start, rows);
+        hashMap.put("total", total);
+        hashMap.put("rows", list);
         return hashMap;
     }
 

@@ -18,11 +18,11 @@ public class BoServiceImpl implements BoService {
     @Override
     public HashMap<String, Object> queryBlog(Integer page, Integer rows) {
         HashMap<String, Object> hashMap = new HashMap<>();
-        long total =dao.queryBlogCount();
-        int start=(page-1)*rows;
-        List<Blog> list=dao.queryBlogPage(start,rows);
-        hashMap.put("total",total);
-        hashMap.put("rows",list);
+        long total = dao.queryBlogCount();
+        int start = (page - 1) * rows;
+        List<Blog> list = dao.queryBlogPage(start, rows);
+        hashMap.put("total", total);
+        hashMap.put("rows", list);
         return hashMap;
     }
 
@@ -34,10 +34,10 @@ public class BoServiceImpl implements BoService {
 
     @Override
     public void addBlog(Blog b) {
-        Integer id=b.getId();
-        if(id!=null){
+        Integer id = b.getId();
+        if (id != null) {
             dao.updateBlog(b);
-        }else{
+        } else {
             dao.addBlog(b);
         }
 
@@ -52,5 +52,7 @@ public class BoServiceImpl implements BoService {
     public Blog queryBlogById(Integer id) {
         return dao.queryBlogById(id);
     }
+
+
 
 }

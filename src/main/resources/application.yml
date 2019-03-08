@@ -1,6 +1,6 @@
 server:
   servlet:
-   context-path: /1807
+    context-path: /1807
   port: 8086
 spring:
   datasource:

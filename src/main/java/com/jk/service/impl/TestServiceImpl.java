@@ -20,9 +20,10 @@ public class TestServiceImpl implements TestService {
     private TestDao testDao;
     @Autowired
     private RedisTemplate redisTemplate;
+
     @Override
     public String say(String something) {
-        return "小明说的"+something;
+        return "小明说的" + something;
     }
 
     @Override

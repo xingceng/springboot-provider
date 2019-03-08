@@ -7,7 +7,7 @@ import java.util.HashMap;
 public interface CommentService {
 
     //查询评论审核
-    HashMap<String,Object> querycomment(Integer page, Integer rows);
+    HashMap<String, Object> querycomment(Integer page, Integer rows);
 
     //审核通过
     void tongguo(Integer id);
@@ -16,7 +16,7 @@ public interface CommentService {
     void bohui(Integer id);
 
     //查询评论信息管理
-    HashMap<String,Object> querycomment2(Integer page, Integer rows);
+    HashMap<String, Object> querycomment2(Integer page, Integer rows);
 
     //新增评论
     void addComment(Comment comment);

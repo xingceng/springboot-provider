@@ -5,7 +5,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
-@Document(collection="logBlog")
+
+@Document(collection = "logBlog")
 public class LogBean implements Serializable {
 
     private static final long serialVersionUID = -676481219701509231L;
@@ -19,9 +20,9 @@ public class LogBean implements Serializable {
     private String repParam;
 
     //业务字段
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date start;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date end;
 
     private String userName;

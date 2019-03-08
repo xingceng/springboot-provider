@@ -17,12 +17,12 @@ public class TypeServiceImpl implements TypeService {
 
     @Override
     public HashMap<String, Object> queryType(int page, int rows) {
-        HashMap<String,Object> hashMap = new HashMap<>();
+        HashMap<String, Object> hashMap = new HashMap<>();
         long total = typeDao.queryTypeTotal();
-        int start = (page-1) * rows;
-        List<BlogType> list = typeDao.queryTypePage(start,rows);
-        hashMap.put("total",total);
-        hashMap.put("rows",list);
+        int start = (page - 1) * rows;
+        List<BlogType> list = typeDao.queryTypePage(start, rows);
+        hashMap.put("total", total);
+        hashMap.put("rows", list);
         return hashMap;
     }
 

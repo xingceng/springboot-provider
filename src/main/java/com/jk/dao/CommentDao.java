@@ -9,11 +9,11 @@ import java.util.List;
 public interface CommentDao {
 
    //查询总条数
-     @Select("select count(*) from t_comment c where c.state =0")
+     @Select("select count(*) from t_comment c, t_blog b,t_blogger a where c.blog_id=b.id and a.id=c.userip and c.state =0")
      long queryCommentCount();
 
      //分页查询
-     @Select("select c.id,c.userip,c.content,c.commentdate,c.blog_id from t_comment c where c.state=0 limit #{start},#{rows}")
+     @Select("select c.id,c.userip,c.content,c.commentdate,c.blog_id from t_comment c, t_blog b,t_blogger a where c.blog_id=b.id and a.id=c.userip and c.state=0 limit #{start},#{rows}")
     List<Comment> queryCommentPage(@Param("start") int start, @Param("rows") Integer rows);
 
      //审核通过
@@ -26,11 +26,11 @@ public interface CommentDao {
 
 
     //查询总条数
-    @Select("select count(*) from t_comment c, t_blog b where c.blog_id=b.id  and c.state in (1,2)")
+    @Select("select count(*) from t_comment c, t_blog b,t_blogger a where c.blog_id=b.id and a.id=c.userip and c.state in (1,2)")
     long queryCommentCount2();
 
     //分页查询
-    @Select("select c.state, b.title,c.id,c.userip,c.content,c.commentdate,c.blog_id from t_comment c , t_blog b where c.blog_id=b.id  and c.state in (1,2) limit #{start},#{rows}")
+    @Select("select c.state, b.title,c.id,c.userip,c.content,c.commentdate,c.blog_id from t_comment c, t_blog b,t_blogger a where c.blog_id=b.id and a.id=c.userip and c.state in (1,2) limit #{start},#{rows}")
     List<Comment> queryCommentPage2(@Param("start") int start, @Param("rows") Integer rows);
 
     //新增评论
@@ -40,5 +40,7 @@ public interface CommentDao {
     //删除评论
     @Delete("delete from t_comment where id=#{id}")
     void delComment(Integer id);
+    @Update("update t_blog set replyHit=replyHit+1 where id=#{id}")
+    void addreplyHit(Integer id);
 }
 

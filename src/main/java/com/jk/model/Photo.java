@@ -17,6 +17,11 @@ public class Photo implements Serializable {
         this.id = id;
     }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+
     public String getImgUrl() {
         return imgUrl;
     }
@@ -32,4 +37,5 @@ public class Photo implements Serializable {
     public void setBoId(Integer boId) {
         this.boId = boId;
     }
+
 }

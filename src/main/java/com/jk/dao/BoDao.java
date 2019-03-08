@@ -13,6 +13,7 @@ public interface BoDao {
 
     @Select("select  count(*) from t_blog b1,t_blogtype b2 where b1.type_id=b2.id")
     long queryBlogCount();
+
     @Select("select  * from t_blog b1,t_blogtype b2 where b1.type_id=b2.id limit #{0},#{1}")
     List<Blog> queryBlogPage(int start, Integer rows);
 

@@ -1,9 +1,7 @@
 package com.jk.model;
 
 
-import javax.xml.crypto.Data;
 import java.io.Serializable;
-import java.util.Date;
 
 public class Comment implements Serializable {
 
@@ -12,9 +10,27 @@ public class Comment implements Serializable {
     private String userip;  //评论者的id
     private String content;   //评论内容
     private String commentdate;  //评论时间
-    private  Integer state;  //审核状态
-    private  Integer blog_id;   //文章id
-    private String  title;  //博客标题
+    private Integer state;  //审核状态
+    private Integer blog_id;   //文章id
+    private String title;  //博客标题
+    private String imagename;
+    private String nickname;
+
+    public String getImagename() {
+        return imagename;
+    }
+
+    public void setImagename(String imagename) {
+        this.imagename = imagename;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
     public String getTitle() {
         return title;

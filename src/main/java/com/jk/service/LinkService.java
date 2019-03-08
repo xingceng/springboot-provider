@@ -5,11 +5,11 @@ import com.jk.model.Link;
 import java.util.HashMap;
 
 public interface LinkService {
-     HashMap<String, Object> queryLink(Integer page, Integer rows);
+    HashMap<String, Object> queryLink(Integer page, Integer rows);
 
-     void saveLink(Link link);
+    void saveLink(Link link);
 
-     void delLink(String ids);
+    void delLink(String ids);
 
-     void editType(Link link);
+    void editType(Link link);
 }

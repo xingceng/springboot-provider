@@ -20,12 +20,12 @@
     <dubbo:service ref="commentService" interface="com.jk.service.CommentService"/>
     <dubbo:service ref="boService" interface="com.jk.service.BoService"/>
     <dubbo:service ref="linkService" interface="com.jk.service.LinkService"/>
-    <dubbo:service ref="photoService" interface="com.jk.service.PhotoService"/>
+    <dubbo:service ref="LoginService" interface="com.jk.service.LoginService"/>
     <!-- 和本地bean一样实现服务 -->
     <bean id="myService" class="com.jk.service.impl.TestServiceImpl" />
     <bean id="typeService" class="com.jk.service.impl.TypeServiceImpl" />
     <bean class="com.jk.service.impl.CommentServiceImpl" id="commentService"/>
     <bean class="com.jk.service.impl.BoServiceImpl" id="boService"/>
     <bean class="com.jk.service.impl.LinkServiceImpl" id="linkService"/>
-    <bean class="com.jk.service.impl.PhotoServiceImpl" id="photoService"/>
+    <bean class="com.jk.service.impl.LoginServiceImpl" id="LoginService"/>
 </beans>
